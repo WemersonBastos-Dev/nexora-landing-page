@@ -57,10 +57,10 @@ export function NexoraHeader() {
           />
         </a>
 
-        {/* Zone 2: Desktop Navigation */}
+        {/* Zone 2: Desktop Navigation (Expanded on large screens; neatly collapsed in drawer on tablet/mobile) */}
         <nav
           aria-label="Navegação principal"
-          className="hidden md:flex items-center gap-4 lg:gap-8"
+          className="hidden lg:flex items-center gap-6 xl:gap-8"
         >
           {NAV_ITEMS.map((item) => (
             <a
@@ -74,13 +74,13 @@ export function NexoraHeader() {
         </nav>
 
         {/* Zone 3: Primary CTA & Mobile Trigger */}
-        <div className="flex items-center gap-3 shrink-0">
+        <div className="flex items-center gap-2.5 sm:gap-3 shrink-0">
           <a
             href={whatsappHref}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Solicitar orçamento pelo WhatsApp (abre em nova aba)"
-            className="nx-btn hidden sm:inline-flex items-center gap-2 rounded-full border-2 border-[#0B1933] bg-white px-4 lg:px-5 py-2 lg:py-2.5 text-xs lg:text-sm font-bold text-[#0B1933] hover:bg-[#0B1933] hover:text-white whitespace-nowrap shrink-0"
+            className="nx-btn hidden sm:inline-flex items-center gap-2 rounded-full border-2 border-[#0B1933] bg-white px-3.5 sm:px-4 lg:px-5 py-2 lg:py-2.5 text-xs lg:text-sm font-bold text-[#0B1933] hover:bg-[#0B1933] hover:text-white whitespace-nowrap shrink-0"
           >
             <span>Solicitar orçamento</span>
             <ArrowUpRight className="h-4 w-4 shrink-0" aria-hidden="true" />
@@ -92,7 +92,7 @@ export function NexoraHeader() {
             aria-expanded={mobileMenuOpen}
             aria-controls="nexora-mobile-menu"
             aria-label={mobileMenuOpen ? 'Fechar menu de navegação' : 'Abrir menu de navegação'}
-            className="inline-flex md:hidden h-11 w-11 items-center justify-center rounded-full border border-[#DCE6F2] bg-white text-[#0B1933] hover:bg-[#EEF5FB] transition-colors"
+            className="inline-flex lg:hidden h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full border border-[#DCE6F2] bg-white text-[#0B1933] hover:bg-[#EEF5FB] transition-colors"
           >
             {mobileMenuOpen ? (
               <X className="h-5 w-5" aria-hidden="true" />
@@ -109,7 +109,7 @@ export function NexoraHeader() {
           id="nexora-mobile-menu"
           role="region"
           aria-label="Menu mobile"
-          className="md:hidden border-b border-[#DCE6F2] bg-white px-4 pt-2 pb-5 shadow-lg"
+          className="lg:hidden border-b border-[#DCE6F2] bg-white px-4 pt-2 pb-5 shadow-lg"
         >
           <nav aria-label="Navegação mobile" className="flex flex-col space-y-1">
             {NAV_ITEMS.map((item) => (

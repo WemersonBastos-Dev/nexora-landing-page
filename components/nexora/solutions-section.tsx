@@ -71,7 +71,7 @@ export function NexoraSolutionsSection() {
       >
         <div className="mx-auto max-w-[1240px] px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
-          <RevealOnScroll className="relative mx-auto max-w-2xl text-center">
+          <RevealOnScroll variant="heading" className="relative mx-auto max-w-2xl text-center">
             <DecorativeSparkle className="hidden sm:block absolute -left-8 top-6 h-5 w-5 text-[#0B1933]" />
             <DecorativeSparkle className="hidden sm:block absolute -right-6 top-2 h-5 w-5 text-[#16E07B]" />
             <DecorativeWave className="hidden sm:block absolute -bottom-5 right-4 w-16 h-4 text-[#214594]" />
@@ -138,7 +138,8 @@ export function NexoraSolutionsSection() {
                 <RevealOnScroll
                   key={solution.id}
                   as="article"
-                  delayMs={idx * 75}
+                  variant="card"
+                  delayMs={idx * 85}
                   className="flex flex-col justify-between rounded-[36px] border border-[#DCE6F2] bg-white/95 backdrop-blur-xs p-6 sm:p-7 shadow-[0_22px_50px_-14px_rgba(11,25,51,0.10)] hover:border-[#214594]/40 transition-colors"
                 >
                   <div>
@@ -214,7 +215,7 @@ export function NexoraSolutionsSection() {
         <div className="mx-auto max-w-[1240px] px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-10">
             {/* Left Column: Text & Architectural Highlights */}
-            <RevealOnScroll className="lg:col-span-6">
+            <RevealOnScroll variant="heading" className="lg:col-span-6">
               <p className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#1D688A]">
                 Destaque Técnico · Sistemas Sob Medida
               </p>
@@ -255,19 +256,19 @@ export function NexoraSolutionsSection() {
               </div>
 
               {/* Action buttons (Replacing App Store badges with authentic NEXORA actions) */}
-              <div className="mt-8 flex flex-wrap items-center gap-4">
+              <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-4">
                 <a
                   href={buildWhatsAppUrl('Aplicação Web Sob Medida')}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="nx-btn inline-flex items-center gap-2 rounded-full bg-[#0B1933] px-6 py-3.5 text-sm font-bold text-white shadow-md hover:bg-[#214594] whitespace-nowrap"
+                  className="nx-btn inline-flex items-center justify-center gap-2 rounded-full bg-[#0B1933] px-5 sm:px-6 py-3.5 text-sm font-bold text-white shadow-md hover:bg-[#214594] text-center"
                 >
                   <span>Conversar sobre uma Aplicação Web</span>
                   <ArrowUpRight className="h-4 w-4 shrink-0" aria-hidden="true" />
                 </a>
                 <a
                   href="#processo"
-                  className="inline-flex items-center gap-1.5 px-3 py-2.5 text-sm font-bold text-[#214594] hover:text-[#0B1933] transition-colors whitespace-nowrap"
+                  className="inline-flex items-center justify-center sm:justify-start gap-1.5 px-3 py-2 text-sm font-bold text-[#214594] hover:text-[#0B1933] transition-colors text-center"
                 >
                   <span>Conhecer etapas de desenvolvimento</span>
                   <ArrowRight className="h-4 w-4 shrink-0" aria-hidden="true" />
@@ -276,7 +277,7 @@ export function NexoraSolutionsSection() {
             </RevealOnScroll>
 
             {/* Right Column: Interactive Conceptual Web App Showcase */}
-            <RevealOnScroll delayMs={100} className="lg:col-span-6">
+            <RevealOnScroll variant="card" delayMs={90} className="lg:col-span-6">
               <div className="relative mx-auto max-w-[520px] py-4">
                 {/* Interactive Concept Frame */}
                 <ParallaxLayer speed={0.85}>
@@ -425,7 +426,7 @@ export function NexoraSolutionsSection() {
         className="relative py-10 sm:py-16"
       >
         <div className="mx-auto max-w-[1240px] px-4 sm:px-6 lg:px-8">
-          <RevealOnScroll>
+          <RevealOnScroll variant="card">
             <div className="relative overflow-hidden rounded-[32px] bg-gradient-to-br from-[#0A1833] via-[#11244A] to-[#0E2247] p-6 sm:p-10 lg:p-14 shadow-[0_28px_64px_-16px_rgba(6,15,34,0.45)]">
 
               <div className="relative z-10 grid grid-cols-1 items-center gap-10 lg:grid-cols-12">
@@ -497,12 +498,12 @@ export function NexoraSolutionsSection() {
                     próximo, organização e transparência em cada etapa.
                   </p>
 
-                  <div className="mt-7 flex flex-wrap items-center gap-5">
+                  <div className="mt-7 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-5">
                     <a
                       href={buildWhatsAppUrl()}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="nx-btn inline-flex items-center gap-2 rounded-full bg-[#16E07B] px-6 py-3.5 text-sm font-extrabold text-[#0B1933] shadow-lg hover:bg-[#31FA8C] whitespace-nowrap"
+                      className="nx-btn inline-flex items-center justify-center gap-2 rounded-full bg-[#16E07B] px-6 py-3.5 text-sm font-extrabold text-[#0B1933] shadow-lg hover:bg-[#31FA8C] text-center"
                     >
                       <span>Solicitar orçamento</span>
                       <ArrowUpRight className="h-4 w-4 shrink-0" aria-hidden="true" />
@@ -510,7 +511,7 @@ export function NexoraSolutionsSection() {
 
                     <a
                       href="#processo"
-                      className="group inline-flex items-center gap-2 text-sm font-bold text-white hover:text-[#31FA8C] transition-colors whitespace-nowrap"
+                      className="group inline-flex items-center justify-center sm:justify-start gap-2 text-sm font-bold text-white hover:text-[#31FA8C] transition-colors py-1 text-center"
                     >
                       <span className="border-b border-white/40 pb-0.5 group-hover:border-[#31FA8C]">
                         Como funciona o processo

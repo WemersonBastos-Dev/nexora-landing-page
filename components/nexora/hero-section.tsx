@@ -61,12 +61,12 @@ export function NexoraHeroSection() {
             </p>
 
             {/* Primary & Secondary CTAs */}
-            <div className="mt-8 flex flex-wrap items-center gap-5 sm:gap-6">
+            <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-6">
               <a
                 href={whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="nx-btn inline-flex items-center justify-center gap-2.5 rounded-full bg-[#214594] px-7 py-4 text-sm sm:text-base font-bold text-white shadow-[0_14px_30px_-8px_rgba(33,69,148,0.45)] hover:bg-[#152E69] whitespace-nowrap shrink-0"
+                className="nx-btn inline-flex items-center justify-center gap-2.5 rounded-full bg-[#214594] px-6 sm:px-7 py-3.5 sm:py-4 text-sm sm:text-base font-bold text-white shadow-[0_14px_30px_-8px_rgba(33,69,148,0.45)] hover:bg-[#152E69] text-center"
               >
                 <span>Solicitar orçamento</span>
                 <ArrowUpRight className="h-4 w-4 shrink-0" aria-hidden="true" />
@@ -74,7 +74,7 @@ export function NexoraHeroSection() {
 
               <a
                 href="#solucoes"
-                className="group inline-flex items-center gap-2 py-2.5 text-sm sm:text-base font-bold text-[#0B1933] hover:text-[#214594] transition-colors whitespace-nowrap shrink-0"
+                className="group inline-flex items-center justify-center sm:justify-start gap-2 py-2 text-sm sm:text-base font-bold text-[#0B1933] hover:text-[#214594] transition-colors text-center"
               >
                 <span className="border-b-2 border-[#0B1933]/30 pb-0.5 group-hover:border-[#214594] transition-colors">
                   Conhecer soluções

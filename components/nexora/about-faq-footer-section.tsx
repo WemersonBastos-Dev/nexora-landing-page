@@ -47,7 +47,7 @@ export function NexoraAboutFaqFooterSection() {
         <div className="mx-auto max-w-[1240px] px-4 sm:px-6 lg:px-8">
           {/* Top Institutional Intro */}
           <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12">
-            <RevealOnScroll className="lg:col-span-6">
+            <RevealOnScroll variant="heading" className="lg:col-span-6">
               <p className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#1D688A]">
                 Quem Somos · Desde 2022
               </p>
@@ -68,7 +68,7 @@ export function NexoraAboutFaqFooterSection() {
             </RevealOnScroll>
 
             {/* Team Members from Page 2 of the PDF */}
-            <RevealOnScroll delayMs={90} className="lg:col-span-6">
+            <RevealOnScroll variant="card" delayMs={90} className="lg:col-span-6">
               <div className="rounded-[32px] border border-[#DCE6F2] bg-white p-6 sm:p-8 shadow-[0_20px_50px_-14px_rgba(11,25,51,0.08)]">
                 <div className="flex items-center justify-between border-b border-[#EEF5FB] pb-4">
                   <div>
@@ -124,7 +124,8 @@ export function NexoraAboutFaqFooterSection() {
                 <RevealOnScroll
                   key={ideal.id}
                   as="article"
-                  delayMs={idx * 80}
+                  variant="card"
+                  delayMs={idx * 85}
                   className="rounded-[28px] border border-[#DCE6F2] bg-white p-6 sm:p-7 shadow-[0_16px_40px_-14px_rgba(11,25,51,0.07)]"
                 >
                   <div className="flex items-center gap-3">
@@ -226,7 +227,8 @@ export function NexoraAboutFaqFooterSection() {
               return (
                 <RevealOnScroll
                   key={faq.id}
-                  delayMs={idx * 60}
+                  variant="card"
+                  delayMs={idx * 55}
                   className="rounded-2xl border border-[#DCE6F2] bg-[#F7FAFC] overflow-hidden transition-colors hover:border-[#214594]/40"
                 >
                   <h3>
@@ -273,7 +275,7 @@ export function NexoraAboutFaqFooterSection() {
       >
         <div className="relative z-10 mx-auto max-w-[1240px] px-4 sm:px-6 lg:px-8">
           {/* Final CTA Banner */}
-          <RevealOnScroll className="rounded-[32px] border border-white/12 bg-gradient-to-br from-[#11244A] to-[#0D1E3D] p-7 sm:p-10 lg:p-12 shadow-2xl">
+          <RevealOnScroll variant="card" className="rounded-[32px] border border-white/12 bg-gradient-to-br from-[#11244A] to-[#0D1E3D] p-7 sm:p-10 lg:p-12 shadow-2xl">
             <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12">
               <div className="lg:col-span-7">
                 <p className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#31FA8C]">
@@ -293,15 +295,15 @@ export function NexoraAboutFaqFooterSection() {
                 </p>
               </div>
 
-              <div className="lg:col-span-5 flex flex-col sm:flex-row lg:flex-col xl:flex-row items-stretch sm:items-center justify-end gap-4">
+              <div className="lg:col-span-5 flex flex-col sm:flex-row lg:flex-col xl:flex-row items-stretch sm:items-center justify-end gap-3.5 sm:gap-4">
                 <a
                   href={buildWhatsAppUrl()}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`Conversar pelo WhatsApp ${NEXORA_CONTACT.whatsappPhoneDisplay} (abre em nova aba)`}
-                  className="nx-btn inline-flex items-center justify-center gap-2.5 rounded-full bg-[#16E07B] px-6 py-4 text-sm sm:text-base font-extrabold text-[#0B1933] shadow-lg hover:bg-[#31FA8C] whitespace-nowrap"
+                  className="nx-btn inline-flex items-center justify-center gap-2 sm:gap-2.5 rounded-full bg-[#16E07B] px-4 sm:px-6 py-3.5 sm:py-4 text-xs sm:text-sm lg:text-base font-extrabold text-[#0B1933] shadow-lg hover:bg-[#31FA8C] text-center"
                 >
-                  <MessageCircle className="h-5 w-5 shrink-0" aria-hidden="true" />
+                  <MessageCircle className="h-4.5 w-4.5 sm:h-5 sm:w-5 shrink-0" aria-hidden="true" />
                   <span>{NEXORA_CONTACT.whatsappPhoneDisplay}</span>
                   <ArrowUpRight className="h-4 w-4 shrink-0" aria-hidden="true" />
                 </a>
@@ -311,9 +313,9 @@ export function NexoraAboutFaqFooterSection() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Seguir @nexora_dev_ no Instagram (abre em nova aba)"
-                  className="nx-btn inline-flex items-center justify-center gap-2.5 rounded-full border border-white/25 bg-white/5 px-6 py-4 text-sm sm:text-base font-bold text-white hover:bg-white/15 whitespace-nowrap"
+                  className="nx-btn inline-flex items-center justify-center gap-2 sm:gap-2.5 rounded-full border border-white/25 bg-white/5 px-4 sm:px-6 py-3.5 sm:py-4 text-xs sm:text-sm lg:text-base font-bold text-white hover:bg-white/15 text-center"
                 >
-                  <Instagram className="h-5 w-5 shrink-0 text-[#2ED8BE]" aria-hidden="true" />
+                  <Instagram className="h-4.5 w-4.5 sm:h-5 sm:w-5 shrink-0 text-[#2ED8BE]" aria-hidden="true" />
                   <span>{NEXORA_CONTACT.instagramHandle}</span>
                   <ArrowUpRight className="h-4 w-4 shrink-0" aria-hidden="true" />
                 </a>

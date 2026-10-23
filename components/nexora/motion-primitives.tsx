@@ -7,20 +7,43 @@ interface RevealOnScrollProps {
   children: React.ReactNode;
   className?: string;
   delayMs?: number;
-  offsetPx?: 16 | 20 | 24;
-  as?: 'div' | 'section' | 'article' | 'li';
+  offsetPx?: number;
+  durationMs?: number;
+  variant?: 'fade-up' | 'card' | 'heading';
+  as?: 'div' | 'section' | 'article' | 'li' | 'blockquote';
 }
 
 export function RevealOnScroll({
   children,
   className = '',
   delayMs = 0,
-  offsetPx = 20,
+  offsetPx,
+  durationMs,
+  variant = 'fade-up',
   as: Tag = 'div',
 }: RevealOnScrollProps) {
   const ref = useRef<HTMLElement | null>(null);
   // Start visible on SSR / before hydration so failed JS never hides content
   const [status, setStatus] = useState<'ssr' | 'pending' | 'visible'>('ssr');
+
+  // Determine variant-specific parameters
+  const resolvedOffset =
+    offsetPx !== undefined
+      ? offsetPx
+      : variant === 'heading'
+      ? 28
+      : variant === 'card'
+      ? 22
+      : 20;
+
+  const resolvedDuration =
+    durationMs !== undefined
+      ? durationMs
+      : variant === 'heading'
+      ? 680
+      : variant === 'card'
+      ? 620
+      : 580;
 
   useEffect(() => {
     const el = ref.current;
@@ -31,52 +54,65 @@ export function RevealOnScroll({
       window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     if (prefersReduced || typeof IntersectionObserver === 'undefined') {
-      setStatus('visible');
       return;
     }
 
     const rect = el.getBoundingClientRect();
-    // If already well within viewport at mount, reveal smoothly or keep visible
-    if (rect.top < window.innerHeight * 0.92 && rect.bottom > 0) {
-      setStatus('visible');
+    // If element is already well within the initial viewport at mount, keep visible
+    if (rect.top < window.innerHeight * 0.88 && rect.bottom > 0) {
       return;
     }
 
-    setStatus('pending');
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) {
-            setStatus('visible');
-            observer.disconnect();
-            break;
+    let observer: IntersectionObserver | null = null;
+    const rafId = window.requestAnimationFrame(() => {
+      setStatus('pending');
+      observer = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting) {
+              setStatus('visible');
+              observer?.disconnect();
+              break;
+            }
           }
-        }
-      },
-      { threshold: 0.12, rootMargin: '0px 0px -32px 0px' }
-    );
+        },
+        { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+      );
+      if (el) observer.observe(el);
+    });
 
-    observer.observe(el);
-    return () => observer.disconnect();
+    return () => {
+      window.cancelAnimationFrame(rafId);
+      if (observer) observer.disconnect();
+    };
   }, []);
 
-  const style: React.CSSProperties =
-    status === 'pending'
-      ? {
-          opacity: 0,
-          transform: `translate3d(0, ${offsetPx}px, 0)`,
-          transitionDelay: delayMs ? `${delayMs}ms` : undefined,
-        }
-      : {
-          opacity: 1,
-          transform: 'translate3d(0, 0, 0)',
-          transitionDelay: delayMs ? `${delayMs}ms` : undefined,
-        };
+  const getStyle = (): React.CSSProperties => {
+    if (status === 'ssr') return {};
+
+    const isPending = status === 'pending';
+    const transform = isPending
+      ? variant === 'card'
+        ? `translate3d(0, ${resolvedOffset}px, 0) scale(0.97)`
+        : `translate3d(0, ${resolvedOffset}px, 0)`
+      : variant === 'card'
+      ? 'translate3d(0, 0, 0) scale(1)'
+      : 'translate3d(0, 0, 0)';
+
+    return {
+      opacity: isPending ? 0 : 1,
+      transform,
+      transitionProperty: 'opacity, transform',
+      transitionDuration: `${resolvedDuration}ms`,
+      transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)',
+      transitionDelay: delayMs > 0 ? `${delayMs}ms` : undefined,
+      willChange: isPending ? 'opacity, transform' : 'auto',
+    };
+  };
 
   return (
     // @ts-expect-error dynamic HTML tag ref
-    <Tag ref={ref} className={`nx-reveal ${className}`} style={style}>
+    <Tag ref={ref} className={`nx-reveal ${className}`} style={getStyle()}>
       {children}
     </Tag>
   );
@@ -93,22 +129,18 @@ export function HeroVisualLayer({
   className = '',
   delayMs = 0,
 }: HeroVisualLayerProps) {
-  const [entered, setEntered] = useState(true);
+  const [entered, setEntered] = useState(false);
 
   useEffect(() => {
     const prefersReduced =
       typeof window !== 'undefined' &&
       window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReduced) {
-      setEntered(true);
-      return;
+      const id = window.requestAnimationFrame(() => setEntered(true));
+      return () => window.cancelAnimationFrame(id);
     }
-    setEntered(false);
     const id = window.requestAnimationFrame(() => {
-      const id2 = window.requestAnimationFrame(() => {
-        setEntered(true);
-      });
-      return () => window.cancelAnimationFrame(id2);
+      setEntered(true);
     });
     return () => window.cancelAnimationFrame(id);
   }, []);

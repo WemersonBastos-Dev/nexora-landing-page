@@ -45,7 +45,7 @@ export function NexoraDifferentialsAndProcessSection() {
         className="relative py-16 sm:py-24 overflow-hidden"
       >
         <div className="mx-auto max-w-[1240px] px-4 sm:px-6 lg:px-8">
-          <RevealOnScroll className="relative mx-auto max-w-2xl text-center">
+          <RevealOnScroll variant="heading" className="relative mx-auto max-w-2xl text-center">
             <DecorativeSparkle className="hidden sm:block absolute -left-6 top-3 h-5 w-5 text-[#0B1933]" />
             <DecorativeSparkle className="hidden sm:block absolute -right-4 top-8 h-5 w-5 text-[#16E07B]" />
 
@@ -73,7 +73,8 @@ export function NexoraDifferentialsAndProcessSection() {
                 <RevealOnScroll
                   key={item.id}
                   as="article"
-                  delayMs={(idx % 3) * 75}
+                  variant="card"
+                  delayMs={(idx % 3) * 85}
                   className="rounded-[28px] border border-[#DCE6F2] bg-white p-6 sm:p-7 shadow-[0_18px_40px_-14px_rgba(11,25,51,0.07)] hover:border-[#214594]/35 transition-colors"
                 >
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#EEF5FB] text-[#214594]">
@@ -109,7 +110,7 @@ export function NexoraDifferentialsAndProcessSection() {
         <div className="mx-auto max-w-[1240px] px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:items-start">
             {/* Left Column: Sticky / Summary Header + Quote + Commercial Terms Card */}
-            <RevealOnScroll className="lg:col-span-5 space-y-6">
+            <RevealOnScroll variant="heading" className="lg:col-span-5 space-y-6">
               <div>
                 <p className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#1D688A]">
                   Processo de Criação
@@ -259,7 +260,8 @@ export function NexoraDifferentialsAndProcessSection() {
                   <RevealOnScroll
                     key={step.stepNumber}
                     as="li"
-                    delayMs={(idx % 4) * 65}
+                    variant="card"
+                    delayMs={(idx % 4) * 80}
                     className="group relative rounded-[24px] border border-[#DCE6F2] bg-white p-5 sm:p-6 shadow-[0_12px_30px_-12px_rgba(11,25,51,0.06)] hover:border-[#214594]/40 transition-colors"
                   >
                     <div className="flex flex-col sm:flex-row sm:items-start gap-4">
