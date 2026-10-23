@@ -112,39 +112,39 @@ export function WebAppSpotlightRibbon({ className = '' }: RibbonProps) {
       aria-hidden="true"
       className={`pointer-events-none absolute inset-0 z-0 overflow-hidden select-none ${className}`}
     >
-      <div className="relative -right-[5%] top-1/3 -translate-y-1/2 w-[114%] opacity-35 sm:opacity-45">
+      <div className="absolute -left-[20%] top-1/3 -translate-y-1/2 w-[140%] opacity-35 sm:opacity-45">
         <svg
-          viewBox="0 0 1440 280"
+          viewBox="0 0 1600 280"
           fill="none"
           preserveAspectRatio="none"
-          className="h-56 sm:h-72 w-full"
+          className="h-64 sm:h-80 w-full"
         >
           <defs>
             <linearGradient
               id="nexoraWebAppGrad"
               x1="0"
               y1="140"
-              x2="1440"
+              x2="1600"
               y2="140"
               gradientUnits="userSpaceOnUse"
             >
-              <stop offset="0%" stopColor="#15B8A6" stopOpacity="0.9" />
+              <stop offset="0%" stopColor="#15B8A6" stopOpacity="0.95" />
               <stop offset="35%" stopColor="#2ED8BE" stopOpacity="0.95" />
               <stop offset="65%" stopColor="#16E07B" stopOpacity="1" />
               <stop offset="100%" stopColor="#214594" stopOpacity="0.85" />
             </linearGradient>
           </defs>
           <path
-            d="M -80 70 C 320 220, 680 50, 1040 180 C 1240 250, 1380 170, 1520 140"
+            d="M -150 140 C 300 260, 700 30, 1150 180 C 1380 250, 1500 170, 1750 120"
             stroke="url(#nexoraWebAppGrad)"
-            strokeWidth="48"
+            strokeWidth="56"
             strokeLinecap="round"
             className="hidden sm:block"
           />
           <path
-            d="M -80 70 C 320 220, 680 50, 1040 180 C 1240 250, 1380 170, 1520 140"
+            d="M -150 140 C 300 260, 700 30, 1150 180 C 1380 250, 1500 170, 1750 120"
             stroke="url(#nexoraWebAppGrad)"
-            strokeWidth="24"
+            strokeWidth="28"
             strokeLinecap="round"
             className="block sm:hidden opacity-60"
           />
