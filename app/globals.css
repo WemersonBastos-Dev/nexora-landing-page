@@ -1,0 +1,137 @@
+@import "tailwindcss";
+
+:root {
+  /* Semantic Color Tokens extracted from NEXORA Commercial Proposal PDF */
+  --nx-bg-canvas: #F7FAFC;
+  --nx-bg-surface: #FFFFFF;
+  --nx-bg-subtle: #EEF5FB;
+  --nx-bg-dark: #0A1833;
+  --nx-bg-dark-elevated: #11244A;
+
+  --nx-blue-primary: #214594;
+  --nx-blue-deep: #152E69;
+  --nx-petrol: #1D688A;
+  --nx-cyan: #15B8A6;
+  --nx-cyan-bright: #2ED8BE;
+  --nx-green: #16E07B;
+  --nx-green-bright: #31FA8C;
+  --nx-green-strong: #098A4B;
+
+  --nx-text-primary: #0B1933;
+  --nx-text-secondary: #3B4E6B;
+  --nx-text-muted: #5A6E8C;
+  --nx-text-on-dark: #F8FAFC;
+  --nx-text-on-dark-muted: #B8C7DF;
+
+  --nx-border-light: #DCE6F2;
+  --nx-border-dark: rgba(255, 255, 255, 0.12);
+
+  /* Radii & Shadows matching the visual reference */
+  --nx-radius-sm: 12px;
+  --nx-radius-md: 20px;
+  --nx-radius-lg: 28px;
+  --nx-radius-xl: 36px;
+  --nx-radius-pill: 9999px;
+
+  --nx-shadow-card: 0 20px 50px -12px rgba(15, 35, 75, 0.08), 0 4px 16px -4px rgba(15, 35, 75, 0.04);
+  --nx-shadow-float: 0 24px 60px -15px rgba(11, 25, 51, 0.16);
+  --nx-shadow-dark: 0 28px 64px -16px rgba(6, 15, 34, 0.45);
+
+  /* Motion tokens */
+  --nx-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --nx-duration-btn: 180ms;
+  --nx-duration-reveal: 600ms;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 88px;
+  background-color: var(--nx-bg-canvas);
+  color: var(--nx-text-primary);
+}
+
+body {
+  background-color: var(--nx-bg-canvas);
+  color: var(--nx-text-primary);
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Interactive button elevation & focus accessibility */
+.nx-btn {
+  transition:
+    transform var(--nx-duration-btn) var(--nx-ease-out),
+    box-shadow var(--nx-duration-btn) var(--nx-ease-out),
+    background-color var(--nx-duration-btn) var(--nx-ease-out),
+    border-color var(--nx-duration-btn) var(--nx-ease-out),
+    color var(--nx-duration-btn) var(--nx-ease-out);
+}
+
+.nx-btn:hover {
+  transform: translateY(-2px);
+}
+
+.nx-btn:active {
+  transform: translateY(0);
+}
+
+.nx-btn:focus-visible,
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--nx-cyan);
+  outline-offset: 3px;
+}
+
+/* Scroll reveal states (progressive enhancement: visible by default if JS disabled) */
+.nx-reveal {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition:
+    opacity var(--nx-duration-reveal) var(--nx-ease-out),
+    transform var(--nx-duration-reveal) var(--nx-ease-out);
+}
+
+.nx-reveal-pending {
+  opacity: 0;
+  transform: translate3d(0, 20px, 0);
+}
+
+.nx-hero-enter {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition:
+    opacity 620ms var(--nx-ease-out),
+    transform 620ms var(--nx-ease-out);
+}
+
+.nx-hero-enter-pending {
+  opacity: 0;
+  transform: translate3d(0, 16px, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .nx-reveal,
+  .nx-reveal-pending,
+  .nx-hero-enter,
+  .nx-hero-enter-pending {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .nx-btn:hover {
+    transform: none !important;
+  }
+}
+
