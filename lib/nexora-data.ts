@@ -320,17 +320,17 @@ export interface TeamMember {
 export const TEAM_MEMBERS: TeamMember[] = [
   {
     name: 'Wemerson B. Evangelista',
-    role: 'Desenvolvedor',
+    role: 'Analista de Dados e Desenvolvedor de Sistemas',
     image: '/assets/nexora/team-wemerson.png',
   },
   {
     name: 'Gusttavo B. de Sousa',
-    role: 'Desenvolvedor',
+    role: 'Desenvolvedor UX/UI',
     image: '/assets/nexora/team-gusttavo.png',
   },
   {
     name: 'Cícero Lucas Soares Alves',
-    role: 'Desenvolvedor',
+    role: 'Analista de Dados e Desenvolvedor de Sistemas',
     image: '/assets/nexora/team-cicero.png',
   },
 ];
