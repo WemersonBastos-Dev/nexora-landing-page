@@ -28,6 +28,7 @@ import {
   ParallaxLayer,
   RevealOnScroll,
 } from './motion-primitives';
+import { ContactBannerOrganicRibbon } from './brand-ribbon';
 
 export function NexoraAboutFaqFooterSection() {
   const [openFaqId, setOpenFaqId] = useState<string | null>(FAQ_ITEMS[0].id);
@@ -275,8 +276,9 @@ export function NexoraAboutFaqFooterSection() {
       >
         <div className="relative z-10 mx-auto max-w-[1240px] px-4 sm:px-6 lg:px-8">
           {/* Final CTA Banner */}
-          <RevealOnScroll variant="card" className="rounded-[32px] border border-white/12 bg-gradient-to-br from-[#11244A] to-[#0D1E3D] p-7 sm:p-10 lg:p-12 shadow-2xl">
-            <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12">
+          <RevealOnScroll variant="card" className="relative overflow-hidden rounded-[32px] border border-white/12 bg-gradient-to-br from-[#11244A] to-[#0D1E3D] p-7 sm:p-10 lg:p-12 shadow-2xl">
+            <ContactBannerOrganicRibbon />
+            <div className="relative z-10 grid grid-cols-1 items-center gap-8 lg:grid-cols-12">
               <div className="lg:col-span-7">
                 <p className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#31FA8C]">
                   Nós abraçamos sua causa

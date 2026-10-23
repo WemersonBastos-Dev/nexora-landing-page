@@ -110,6 +110,21 @@ summary:focus-visible {
   transform: translate3d(0, 16px, 0);
 }
 
+/* Subtle organic ribbon ambient float */
+@keyframes nxWaveSway {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -6px, 0);
+  }
+}
+
+.nx-ribbon-sway {
+  animation: nxWaveSway 10s ease-in-out infinite;
+  will-change: transform;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -125,7 +140,9 @@ summary:focus-visible {
   .nx-reveal,
   .nx-reveal-pending,
   .nx-hero-enter,
-  .nx-hero-enter-pending {
+  .nx-hero-enter-pending,
+  .nx-ribbon-sway {
+    animation: none !important;
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;

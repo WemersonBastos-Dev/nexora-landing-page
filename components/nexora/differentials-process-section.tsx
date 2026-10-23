@@ -25,6 +25,7 @@ import {
   ParallaxLayer,
   RevealOnScroll,
 } from './motion-primitives';
+import { DifferentialsOrganicRibbon } from './brand-ribbon';
 
 const DIFFERENTIAL_ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
   comunicacao: MessageSquare,
@@ -44,7 +45,8 @@ export function NexoraDifferentialsAndProcessSection() {
         aria-labelledby="heading-diferenciais"
         className="relative py-16 sm:py-24 overflow-hidden"
       >
-        <div className="mx-auto max-w-[1240px] px-4 sm:px-6 lg:px-8">
+        <DifferentialsOrganicRibbon />
+        <div className="relative z-10 mx-auto max-w-[1240px] px-4 sm:px-6 lg:px-8">
           <RevealOnScroll variant="heading" className="relative mx-auto max-w-2xl text-center">
             <DecorativeSparkle className="hidden sm:block absolute -left-6 top-3 h-5 w-5 text-[#0B1933]" />
             <DecorativeSparkle className="hidden sm:block absolute -right-4 top-8 h-5 w-5 text-[#16E07B]" />

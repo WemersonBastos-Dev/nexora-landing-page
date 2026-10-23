@@ -26,6 +26,10 @@ import {
   ParallaxLayer,
   RevealOnScroll,
 } from './motion-primitives';
+import {
+  SolutionsOrganicRibbon,
+  WebAppSpotlightRibbon,
+} from './brand-ribbon';
 
 function SolutionCapsuleIcon({ accentTone, id }: { accentTone: WebSolution['accentTone']; id: string }) {
   const toneStyles = {
@@ -96,40 +100,12 @@ export function NexoraSolutionsSection() {
 
         {/* Curved Connecting Ribbon + 4 Cards Grid */}
         <div className="relative mt-12 sm:mt-16 overflow-hidden py-2">
-          {/* Decorative Curved Ribbon behind the 4 cards (inspired by Kard reference) */}
+          {/* Redesigned continuous organic ribbon behind the 4 cards */}
           <ParallaxLayer
-            speed={0.45}
-            className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 z-0 hidden md:block"
+            speed={0.35}
+            className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 z-0"
           >
-            <svg
-              viewBox="0 0 1440 260"
-              fill="none"
-              preserveAspectRatio="none"
-              aria-hidden="true"
-              className="h-52 w-full overflow-hidden"
-            >
-              <path
-                d="M0 210 C 320 60, 560 220, 880 120 C 1140 40, 1320 90, 1440 20"
-                stroke="url(#nexoraRibbonGradient)"
-                strokeWidth="76"
-                strokeLinecap="round"
-              />
-              <defs>
-                <linearGradient
-                  id="nexoraRibbonGradient"
-                  x1="0"
-                  y1="130"
-                  x2="1440"
-                  y2="130"
-                  gradientUnits="userSpaceOnUse"
-                >
-                  <stop offset="0%" stopColor="#214594" />
-                  <stop offset="45%" stopColor="#15B8A6" />
-                  <stop offset="75%" stopColor="#16E07B" />
-                  <stop offset="100%" stopColor="#214594" />
-                </linearGradient>
-              </defs>
-            </svg>
+            <SolutionsOrganicRibbon />
           </ParallaxLayer>
 
           <div className="relative z-10 mx-auto max-w-[1240px] px-4 sm:px-6 lg:px-8">
@@ -212,7 +188,8 @@ export function NexoraSolutionsSection() {
         aria-labelledby="heading-webapp-spotlight"
         className="relative py-16 sm:py-24 overflow-hidden"
       >
-        <div className="mx-auto max-w-[1240px] px-4 sm:px-6 lg:px-8">
+        <WebAppSpotlightRibbon />
+        <div className="relative z-10 mx-auto max-w-[1240px] px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-10">
             {/* Left Column: Text & Architectural Highlights */}
             <RevealOnScroll variant="heading" className="lg:col-span-6">
