@@ -31,19 +31,19 @@ export function RevealOnScroll({
     offsetPx !== undefined
       ? offsetPx
       : variant === 'heading'
-      ? 28
+      ? 24
       : variant === 'card'
-      ? 22
-      : 20;
+      ? 24
+      : 24;
 
   const resolvedDuration =
     durationMs !== undefined
       ? durationMs
       : variant === 'heading'
-      ? 680
+      ? 700
       : variant === 'card'
-      ? 620
-      : 580;
+      ? 640
+      : 600;
 
   useEffect(() => {
     const el = ref.current;
@@ -104,7 +104,7 @@ export function RevealOnScroll({
       transform,
       transitionProperty: 'opacity, transform',
       transitionDuration: `${resolvedDuration}ms`,
-      transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)',
+      transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)',
       transitionDelay: delayMs > 0 ? `${delayMs}ms` : undefined,
       willChange: isPending ? 'opacity, transform' : 'auto',
     };
