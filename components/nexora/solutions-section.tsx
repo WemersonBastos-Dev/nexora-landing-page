@@ -460,7 +460,7 @@ export function NexoraSolutionsSection() {
 
                     {/* Bottom Overlapping Deep Blue Interface Window */}
                     <ParallaxLayer speed={1.0}>
-                      <div className="relative z-10 -mt-6 ml-4 sm:ml-10 rounded-2xl border border-[#2ED8BE]/30 bg-gradient-to-r from-[#214594] to-[#1D688A] p-4 sm:p-5 text-white shadow-2xl sm:-rotate-[5deg]">
+                      <div className="relative z-10 mt-3 sm:-mt-6 ml-0 sm:ml-10 rounded-2xl border border-[#2ED8BE]/30 bg-gradient-to-r from-[#214594] to-[#1D688A] p-4 sm:p-5 text-white shadow-2xl sm:-rotate-[5deg]">
                         <div className="flex items-center justify-between">
                           <span className="text-xs font-bold text-[#31FA8C]">
                             Dashboard & Conversão

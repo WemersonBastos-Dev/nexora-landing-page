@@ -181,7 +181,7 @@ export function NexoraHeroSection() {
               {/* Layer 2: Overlapping Secondary Conceptual Card (Bottom-Right / Left offset) */}
               <HeroVisualLayer delayMs={160}>
                 <ParallaxLayer speed={1.05}>
-                  <div className="relative z-20 -mt-5 ml-auto max-w-[330px] rounded-2xl border border-[#DCE6F2] bg-white p-4 shadow-[0_20px_45px_-12px_rgba(11,25,51,0.18)] sm:-rotate-2">
+                  <div className="relative z-20 mt-3.5 sm:-mt-5 sm:ml-auto w-full sm:max-w-[330px] rounded-2xl border border-[#DCE6F2] bg-white p-4 shadow-[0_20px_45px_-12px_rgba(11,25,51,0.18)] sm:-rotate-2">
                     <div className="flex items-center gap-3">
                       <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[#214594] to-[#15B8A6] text-white">
                         <Layout className="h-5 w-5" aria-hidden="true" />

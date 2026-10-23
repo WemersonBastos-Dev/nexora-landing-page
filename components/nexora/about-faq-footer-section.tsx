@@ -304,7 +304,7 @@ export function NexoraAboutFaqFooterSection() {
                   className="nx-btn inline-flex items-center justify-center gap-2 sm:gap-2.5 rounded-full bg-[#16E07B] px-4 sm:px-6 py-3.5 sm:py-4 text-xs sm:text-sm lg:text-base font-extrabold text-[#0B1933] shadow-lg hover:bg-[#31FA8C] text-center"
                 >
                   <MessageCircle className="h-4.5 w-4.5 sm:h-5 sm:w-5 shrink-0" aria-hidden="true" />
-                  <span>{NEXORA_CONTACT.whatsappPhoneDisplay}</span>
+                  <span>WhatsApp</span>
                   <ArrowUpRight className="h-4 w-4 shrink-0" aria-hidden="true" />
                 </a>
 
@@ -316,7 +316,7 @@ export function NexoraAboutFaqFooterSection() {
                   className="nx-btn inline-flex items-center justify-center gap-2 sm:gap-2.5 rounded-full border border-white/25 bg-white/5 px-4 sm:px-6 py-3.5 sm:py-4 text-xs sm:text-sm lg:text-base font-bold text-white hover:bg-white/15 text-center"
                 >
                   <Instagram className="h-4.5 w-4.5 sm:h-5 sm:w-5 shrink-0 text-[#2ED8BE]" aria-hidden="true" />
-                  <span>{NEXORA_CONTACT.instagramHandle}</span>
+                  <span>Instagram</span>
                   <ArrowUpRight className="h-4 w-4 shrink-0" aria-hidden="true" />
                 </a>
               </div>
