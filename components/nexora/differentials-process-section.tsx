@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import React from 'react';
+import React from "react";
 import {
   ArrowUpRight,
   CheckCircle2,
@@ -13,21 +13,24 @@ import {
   Shield,
   Sparkles,
   Zap,
-} from 'lucide-react';
+} from "lucide-react";
 import {
   DIFFERENTIALS,
   PROCESS_STEPS,
   buildWhatsAppUrl,
-} from '@/lib/nexora-data';
+} from "@/lib/nexora-data";
 import {
   DecorativeSparkle,
   DecorativeWave,
   ParallaxLayer,
   RevealOnScroll,
-} from './motion-primitives';
-import { DifferentialsOrganicRibbon } from './brand-ribbon';
+} from "./motion-primitives";
+import { DifferentialsOrganicRibbon } from "./brand-ribbon";
 
-const DIFFERENTIAL_ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
+const DIFFERENTIAL_ICONS: Record<
+  string,
+  React.ComponentType<{ className?: string }>
+> = {
   comunicacao: MessageSquare,
   criatividade: Sparkles,
   profissionalismo: Shield,
@@ -45,20 +48,16 @@ export function NexoraDifferentialsAndProcessSection() {
         aria-labelledby="heading-diferenciais"
         className="relative py-16 sm:py-24 overflow-hidden"
       >
-        <DifferentialsOrganicRibbon />
         <div className="relative z-10 mx-auto max-w-[1240px] px-4 sm:px-6 lg:px-8">
-          <RevealOnScroll variant="heading" className="relative mx-auto max-w-2xl text-center">
-            <DecorativeSparkle className="hidden sm:block absolute -left-6 top-3 h-5 w-5 text-[#0B1933]" />
-            <DecorativeSparkle className="hidden sm:block absolute -right-4 top-8 h-5 w-5 text-[#16E07B]" />
-
-            <p className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#1D688A]">
-              Vantagens de Trabalhar Conosco
-            </p>
+          <RevealOnScroll
+            variant="heading"
+            className="relative max-w-3xl text-left"
+          >
             <h2
               id="heading-diferenciais"
-              className="mt-2 text-3xl sm:text-4xl lg:text-[2.65rem] font-extrabold tracking-tight text-[#0B1933] leading-[1.12] [text-wrap:balance]"
+              className="mt-2 text-4xl sm:text-5xl lg:text-[3.5rem] font-medium tracking-tight text-[#0B1933] leading-[1.12] [text-wrap:balance]"
             >
-              Por que construir seu projeto com a{' '}
+              Por que construir seu projeto com a{" "}
               <span className="text-[#214594]">NEXORA?</span>
             </h2>
             <p className="mt-4 text-base sm:text-lg text-[#3B4E6B] leading-relaxed">
@@ -77,12 +76,12 @@ export function NexoraDifferentialsAndProcessSection() {
                   as="article"
                   variant="card"
                   delayMs={(idx % 3) * 85}
-                  className="rounded-[28px] border border-[#DCE6F2] bg-white p-6 sm:p-7 shadow-[0_18px_40px_-14px_rgba(11,25,51,0.07)] hover:border-[#214594]/35 transition-colors"
+                  className="rounded-2xl border border-[#DCE6F2] bg-white p-6 sm:p-7  hover:border-[#214594]/35 transition-colors"
                 >
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#EEF5FB] text-[#214594]">
                     <Icon className="h-6 w-6" aria-hidden="true" />
                   </div>
-                  <h3 className="mt-5 text-lg sm:text-xl font-extrabold text-[#0B1933]">
+                  <h3 className="mt-5 text-lg sm:text-xl font-medium text-[#0B1933]">
                     {item.title}
                   </h3>
                   <p className="mt-2 text-sm sm:text-base leading-relaxed text-[#3B4E6B]">
@@ -102,26 +101,20 @@ export function NexoraDifferentialsAndProcessSection() {
         className="relative py-16 sm:py-24 bg-[#EEF5FB]/70 border-y border-[#DCE6F2] overflow-hidden"
       >
         {/* Subtle decorative wave */}
-        <ParallaxLayer
-          speed={0.4}
-          className="pointer-events-none absolute top-10 right-10 hidden lg:block"
-        >
-          <DecorativeWave className="w-24 h-5 text-[#214594]/40" />
-        </ParallaxLayer>
 
         <div className="mx-auto max-w-[1240px] px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:items-start">
             {/* Left Column: Sticky / Summary Header + Quote + Commercial Terms Card */}
-            <RevealOnScroll variant="heading" className="lg:col-span-5 space-y-6">
+            <RevealOnScroll
+              variant="heading"
+              className="lg:col-span-5 space-y-6"
+            >
               <div>
-                <p className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#1D688A]">
-                  Processo de Criação
-                </p>
                 <h2
                   id="heading-processo"
-                  className="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight text-[#0B1933] leading-[1.12] [text-wrap:balance]"
+                  className="mt-2 text-3xl sm:text-4xl font-medium tracking-tight text-[#0B1933] leading-[1.12] [text-wrap:balance]"
                 >
-                  Do primeiro contato à{' '}
+                  Do primeiro contato à{" "}
                   <span className="text-[#214594]">entrega definitiva</span>
                 </h2>
                 <p className="mt-4 text-base text-[#3B4E6B] leading-relaxed">
@@ -131,13 +124,13 @@ export function NexoraDifferentialsAndProcessSection() {
               </div>
 
               {/* Condições Comerciais Card (Strictly faithful to the PDF) */}
-              <div className="rounded-[28px] bg-[#0A1833] p-6 sm:p-7 text-white shadow-[0_24px_50px_-14px_rgba(10,24,51,0.3)]">
+              <div className="rounded-2xl bg-[#0A1833] p-6 sm:p-7 text-white ">
                 <div className="flex items-center justify-between border-b border-white/10 pb-4">
                   <div>
                     <span className="text-xs font-bold uppercase tracking-wider text-[#31FA8C]">
                       Transparência Comercial
                     </span>
-                    <h3 className="mt-0.5 text-lg font-extrabold">
+                    <h3 className="mt-0.5 text-lg font-medium">
                       Condições da Proposta
                     </h3>
                   </div>
@@ -156,7 +149,7 @@ export function NexoraDifferentialsAndProcessSection() {
                     <span>
                       <strong className="font-bold text-white">
                         Entrada de 50%:
-                      </strong>{' '}
+                      </strong>{" "}
                       <span className="text-[#B8C7DF]">
                         início da produção mediante 50% de entrada e envio do
                         briefing.
@@ -171,7 +164,7 @@ export function NexoraDifferentialsAndProcessSection() {
                     <span>
                       <strong className="font-bold text-white">
                         Prazo conforme a demanda:
-                      </strong>{' '}
+                      </strong>{" "}
                       <span className="text-[#B8C7DF]">
                         tempo de entrega definido de acordo com a demanda do
                         projeto.
@@ -186,7 +179,7 @@ export function NexoraDifferentialsAndProcessSection() {
                     <span>
                       <strong className="font-bold text-white">
                         Até 3 alterações sem custo:
-                      </strong>{' '}
+                      </strong>{" "}
                       <span className="text-[#B8C7DF]">
                         acompanhe a criação e sugira até três ajustes sem custos
                         adicionais.
@@ -201,7 +194,7 @@ export function NexoraDifferentialsAndProcessSection() {
                     <span>
                       <strong className="font-bold text-white">
                         Alterações adicionais (5%):
-                      </strong>{' '}
+                      </strong>{" "}
                       <span className="text-[#B8C7DF]">
                         ajustes além dos três inclusos estão sujeitos à taxa de
                         5% do valor total do projeto.
@@ -216,7 +209,7 @@ export function NexoraDifferentialsAndProcessSection() {
                     <span>
                       <strong className="font-bold text-white">
                         Entrega definitiva:
-                      </strong>{' '}
+                      </strong>{" "}
                       <span className="text-[#B8C7DF]">
                         realizada após a aprovação final do cliente e quitação
                         dos 50% restantes.
@@ -230,10 +223,13 @@ export function NexoraDifferentialsAndProcessSection() {
                     href={buildWhatsAppUrl()}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="nx-btn flex w-full items-center justify-center gap-2 rounded-full bg-[#16E07B] px-5 py-3 text-sm font-extrabold text-[#0B1933] hover:bg-[#31FA8C]"
+                    className="nx-btn flex w-full items-center justify-center gap-2 rounded-full bg-[#16E07B] px-5 py-3 text-sm font-medium text-[#0B1933] hover:bg-[#31FA8C]"
                   >
                     <span>Iniciar contato pelo WhatsApp</span>
-                    <ArrowUpRight className="h-4 w-4 shrink-0" aria-hidden="true" />
+                    <ArrowUpRight
+                      className="h-4 w-4 shrink-0"
+                      aria-hidden="true"
+                    />
                   </a>
                 </div>
               </div>
@@ -241,10 +237,9 @@ export function NexoraDifferentialsAndProcessSection() {
               {/* Quote from Page 5 of the PDF */}
               <blockquote className="rounded-2xl border border-[#DCE6F2] bg-white p-5 sm:p-6 shadow-xs">
                 <p className="text-base font-bold text-[#0B1933] leading-relaxed">
-                  “Com{' '}
-                  <span className="text-[#098A4B]">organização</span> e tempo,
-                  acha-se o segredo de fazer tudo e{' '}
-                  <span className="text-[#098A4B]">bem feito</span>.”
+                  “Com <span className="text-[#214594]">organização</span> e
+                  tempo, acha-se o segredo de fazer tudo e{" "}
+                  <span className="text-[#214594]">bem feito</span>.”
                 </p>
                 <footer className="mt-2 text-xs font-semibold text-[#5A6E8C]">
                   — Pitágoras
@@ -264,15 +259,15 @@ export function NexoraDifferentialsAndProcessSection() {
                     as="li"
                     variant="card"
                     delayMs={(idx % 4) * 80}
-                    className="group relative rounded-[24px] border border-[#DCE6F2] bg-white p-5 sm:p-6 shadow-[0_12px_30px_-12px_rgba(11,25,51,0.06)] hover:border-[#214594]/40 transition-colors"
+                    className="group relative rounded-none border-t border-[#DCE6F2] bg-transparent p-5 sm:p-6  hover:border-[#214594]/40 transition-colors"
                   >
                     <div className="flex flex-col sm:flex-row sm:items-start gap-4">
-                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-[#214594] to-[#1D688A] text-sm font-extrabold text-white tabular-nums shadow-xs">
+                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-[#214594] to-[#1D688A] text-sm font-medium text-white tabular-nums shadow-xs">
                         {step.stepNumber}
                       </div>
                       <div className="flex-1">
                         <div className="flex flex-wrap items-baseline justify-between gap-2">
-                          <h3 className="text-lg font-extrabold text-[#0B1933]">
+                          <h3 className="text-lg font-medium text-[#0B1933]">
                             {step.title}
                           </h3>
                           <span className="text-xs font-bold text-[#1D688A]">

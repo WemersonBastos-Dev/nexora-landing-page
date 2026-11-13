@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import Image from 'next/image';
+import React, { useState } from "react";
+import Image from "next/image";
 import {
   ArrowUpRight,
   Check,
@@ -12,23 +12,23 @@ import {
   Instagram,
   MessageCircle,
   Sparkles,
-} from 'lucide-react';
+} from "lucide-react";
 import {
   COMPLEMENTARY_SERVICES,
   FAQ_ITEMS,
-   NAV_ITEMS,
+  NAV_ITEMS,
   NEXORA_CONTACT,
   NEXORA_IDEALS,
   TEAM_MEMBERS,
   buildWhatsAppUrl,
-} from '@/lib/nexora-data';
+} from "@/lib/nexora-data";
 import {
   DecorativeSparkle,
   DecorativeWave,
   ParallaxLayer,
   RevealOnScroll,
-} from './motion-primitives';
-import { ContactBannerOrganicRibbon } from './brand-ribbon';
+} from "./motion-primitives";
+import { ContactBannerOrganicRibbon } from "./brand-ribbon";
 
 export function NexoraAboutFaqFooterSection() {
   const [openFaqId, setOpenFaqId] = useState<string | null>(FAQ_ITEMS[0].id);
@@ -49,14 +49,11 @@ export function NexoraAboutFaqFooterSection() {
           {/* Top Institutional Intro */}
           <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12">
             <RevealOnScroll variant="heading" className="lg:col-span-6">
-              <p className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#1D688A]">
-                Quem Somos · Desde 2022
-              </p>
               <h2
                 id="heading-sobre"
-                className="mt-2 text-3xl sm:text-4xl lg:text-[2.65rem] font-extrabold tracking-tight text-[#0B1933] leading-[1.12] [text-wrap:balance]"
+                className="mt-2 text-4xl sm:text-5xl lg:text-[3.5rem] font-medium tracking-tight text-[#0B1933] leading-[1.12] [text-wrap:balance]"
               >
-                Uma equipe apaixonada por unir{' '}
+                Uma equipe apaixonada por unir{" "}
                 <span className="text-[#214594]">design, funcionalidade</span> e
                 resultado
               </h2>
@@ -69,18 +66,18 @@ export function NexoraAboutFaqFooterSection() {
             </RevealOnScroll>
 
             {/* Team Members from Page 2 of the PDF */}
-            <RevealOnScroll variant="card" delayMs={90} className="lg:col-span-6">
-              <div className="rounded-[32px] border border-[#DCE6F2] bg-white p-6 sm:p-8 shadow-[0_20px_50px_-14px_rgba(11,25,51,0.08)]">
+            <RevealOnScroll
+              variant="card"
+              delayMs={90}
+              className="lg:col-span-6"
+            >
+              <div className="rounded-2xl border border-[#DCE6F2] bg-white p-6 sm:p-8 ">
                 <div className="flex items-center justify-between border-b border-[#EEF5FB] pb-4">
                   <div>
-                    <p className="text-xs font-bold uppercase tracking-wider text-[#1D688A]">
-                      Equipe NEXORA
-                    </p>
-                    <h3 className="text-lg sm:text-xl font-extrabold text-[#0B1933]">
+                    <h3 className="text-lg sm:text-xl font-medium text-[#0B1933]">
                       Quem serão seus profissionais?
                     </h3>
                   </div>
-                  <DecorativeSparkle className="h-5 w-5 text-[#16E07B]" />
                 </div>
 
                 <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-3">
@@ -99,7 +96,7 @@ export function NexoraAboutFaqFooterSection() {
                           className="object-cover"
                         />
                       </div>
-                      <h4 className="mt-3.5 text-sm font-extrabold text-[#0B1933] leading-snug">
+                      <h4 className="mt-3.5 text-sm font-medium text-[#0B1933] leading-snug">
                         {member.name}
                       </h4>
                       <span className="mt-1 text-xs font-semibold text-[#1D688A]">
@@ -116,24 +113,24 @@ export function NexoraAboutFaqFooterSection() {
           <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
             {NEXORA_IDEALS.map((ideal, idx) => {
               const Icon =
-                ideal.id === 'missao'
+                ideal.id === "missao"
                   ? Flag
-                  : ideal.id === 'valores'
-                  ? HeartHandshake
-                  : Compass;
+                  : ideal.id === "valores"
+                    ? HeartHandshake
+                    : Compass;
               return (
                 <RevealOnScroll
                   key={ideal.id}
                   as="article"
                   variant="card"
                   delayMs={idx * 85}
-                  className="rounded-[28px] border border-[#DCE6F2] bg-white p-6 sm:p-7 shadow-[0_16px_40px_-14px_rgba(11,25,51,0.07)]"
+                  className="rounded-2xl border border-[#DCE6F2] bg-white p-6 sm:p-7 "
                 >
                   <div className="flex items-center gap-3">
                     <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-[#214594] to-[#15B8A6] text-white">
                       <Icon className="h-5 w-5" aria-hidden="true" />
                     </div>
-                    <h3 className="text-xl font-extrabold text-[#0B1933]">
+                    <h3 className="text-xl font-medium text-[#0B1933]">
                       {ideal.title}
                     </h3>
                   </div>
@@ -147,13 +144,10 @@ export function NexoraAboutFaqFooterSection() {
 
           {/* OUTROS SERVIÇOS (Secondary & Compact Area preserving Web Protagonism) */}
           <RevealOnScroll className="mt-12">
-            <div className="rounded-[28px] border border-[#DCE6F2] bg-[#EEF5FB]/80 p-6 sm:p-8">
+            <div className="rounded-2xl border border-[#DCE6F2] bg-[#EEF5FB]/80 p-6 sm:p-8">
               <div className="flex flex-col justify-between gap-4 lg:flex-row lg:items-center">
                 <div className="max-w-xl">
-                  <p className="text-xs font-bold uppercase tracking-wider text-[#1D688A]">
-                    Serviços Complementares
-                  </p>
-                  <h3 className="mt-1 text-xl sm:text-2xl font-extrabold text-[#0B1933]">
+                  <h3 className="mt-1 text-xl sm:text-2xl font-medium text-[#0B1933]">
                     Outros serviços para fortalecer a identidade da sua marca
                   </h3>
                   <p className="mt-1.5 text-sm text-[#3B4E6B]">
@@ -163,13 +157,16 @@ export function NexoraAboutFaqFooterSection() {
                 </div>
 
                 <a
-                  href={buildWhatsAppUrl('Outros Serviços de Design e Rede')}
+                  href={buildWhatsAppUrl("Outros Serviços de Design e Rede")}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="nx-btn inline-flex items-center justify-center gap-2 self-start lg:self-center rounded-full border border-[#214594] bg-white px-5 py-2.5 text-xs sm:text-sm font-bold text-[#214594] hover:bg-[#214594] hover:text-white whitespace-nowrap shrink-0"
                 >
                   <span>Consultar serviços complementares</span>
-                  <ArrowUpRight className="h-4 w-4 shrink-0" aria-hidden="true" />
+                  <ArrowUpRight
+                    className="h-4 w-4 shrink-0"
+                    aria-hidden="true"
+                  />
                 </a>
               </div>
 
@@ -203,16 +200,9 @@ export function NexoraAboutFaqFooterSection() {
       >
         <div className="mx-auto max-w-[960px] px-4 sm:px-6 lg:px-8">
           <RevealOnScroll className="relative text-center">
-            <DecorativeSparkle className="hidden sm:block absolute left-4 top-2 h-5 w-5 text-[#0B1933]" />
-            <DecorativeSparkle className="hidden sm:block absolute right-4 top-6 h-5 w-5 text-[#16E07B]" />
-            <DecorativeWave className="mx-auto mb-3 w-16 h-4 text-[#214594]" />
-
-            <p className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#1D688A]">
-              Tire suas dúvidas
-            </p>
             <h2
               id="heading-faq"
-              className="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight text-[#0B1933] leading-[1.12] [text-wrap:balance]"
+              className="mt-2 text-3xl sm:text-4xl font-medium tracking-tight text-[#0B1933] leading-[1.12] [text-wrap:balance]"
             >
               Perguntas <span className="text-[#214594]">frequentes</span>
             </h2>
@@ -239,13 +229,15 @@ export function NexoraAboutFaqFooterSection() {
                       aria-expanded={isOpen}
                       aria-controls={`faq-panel-${faq.id}`}
                       id={`faq-trigger-${faq.id}`}
-                      className="flex w-full items-center justify-between gap-4 px-5 py-4.5 sm:px-6 sm:py-5 text-left text-base sm:text-lg font-extrabold text-[#0B1933]"
+                      className="flex w-full items-center justify-between gap-4 px-5 py-4.5 sm:px-6 sm:py-5 text-left text-base sm:text-lg font-medium text-[#0B1933]"
                     >
                       <span>{faq.question}</span>
                       <span
                         aria-hidden="true"
-                        className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white border border-[#DCE6F2] text-[#214594] transition-transform duration-200 ${
-                          isOpen ? 'rotate-180 bg-[#214594] text-white' : ''
+                        className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[#DCE6F2] transition-transform duration-200 ${
+                          isOpen
+                            ? "rotate-180 bg-[#214594] text-white"
+                            : "bg-white text-[#214594]"
                         }`}
                       >
                         <ChevronDown className="h-4 w-4" />
@@ -276,18 +268,17 @@ export function NexoraAboutFaqFooterSection() {
       >
         <div className="relative z-10 mx-auto max-w-[1240px] px-4 sm:px-6 lg:px-8">
           {/* Final CTA Banner */}
-          <RevealOnScroll variant="card" className="relative overflow-hidden rounded-[32px] border border-white/12 bg-gradient-to-br from-[#11244A] to-[#0D1E3D] p-7 sm:p-10 lg:p-12 shadow-2xl">
-            <ContactBannerOrganicRibbon />
+          <RevealOnScroll
+            variant="card"
+            className="relative overflow-hidden rounded-2xl border border-white/12 bg-gradient-to-br from-[#11244A] to-[#0D1E3D] p-7 sm:p-10 lg:p-12 shadow-2xl"
+          >
             <div className="relative z-10 grid grid-cols-1 items-center gap-8 lg:grid-cols-12">
               <div className="lg:col-span-7">
-                <p className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#31FA8C]">
-                  Nós abraçamos sua causa
-                </p>
                 <h2
                   id="heading-contato-final"
-                  className="mt-2 text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight leading-[1.15] [text-wrap:balance]"
+                  className="mt-2 text-2xl sm:text-3xl lg:text-4xl font-medium tracking-tight leading-[1.15] [text-wrap:balance]"
                 >
-                  “Uma parceria de sucesso nasce com{' '}
+                  “Uma parceria de sucesso nasce com{" "}
                   <span className="text-[#31FA8C]">comprometimento</span>.”
                 </h2>
                 <p className="mt-4 max-w-2xl text-sm sm:text-base leading-relaxed text-[#B8C7DF]">
@@ -303,11 +294,17 @@ export function NexoraAboutFaqFooterSection() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`Conversar pelo WhatsApp ${NEXORA_CONTACT.whatsappPhoneDisplay} (abre em nova aba)`}
-                  className="nx-btn inline-flex items-center justify-center gap-2 sm:gap-2.5 rounded-full bg-[#16E07B] px-4 sm:px-6 py-3.5 sm:py-4 text-xs sm:text-sm lg:text-base font-extrabold text-[#0B1933] shadow-lg hover:bg-[#31FA8C] text-center"
+                  className="nx-btn inline-flex items-center justify-center gap-2 sm:gap-2.5 rounded-full bg-[#16E07B] px-4 sm:px-6 py-3.5 sm:py-4 text-xs sm:text-sm lg:text-base font-medium text-[#0B1933] shadow-lg hover:bg-[#31FA8C] text-center"
                 >
-                  <MessageCircle className="h-4.5 w-4.5 sm:h-5 sm:w-5 shrink-0" aria-hidden="true" />
+                  <MessageCircle
+                    className="h-4.5 w-4.5 sm:h-5 sm:w-5 shrink-0"
+                    aria-hidden="true"
+                  />
                   <span>WhatsApp</span>
-                  <ArrowUpRight className="h-4 w-4 shrink-0" aria-hidden="true" />
+                  <ArrowUpRight
+                    className="h-4 w-4 shrink-0"
+                    aria-hidden="true"
+                  />
                 </a>
 
                 <a
@@ -317,9 +314,15 @@ export function NexoraAboutFaqFooterSection() {
                   aria-label="Seguir @nexora_dev_ no Instagram (abre em nova aba)"
                   className="nx-btn inline-flex items-center justify-center gap-2 sm:gap-2.5 rounded-full border border-white/25 bg-white/5 px-4 sm:px-6 py-3.5 sm:py-4 text-xs sm:text-sm lg:text-base font-bold text-white hover:bg-white/15 text-center"
                 >
-                  <Instagram className="h-4.5 w-4.5 sm:h-5 sm:w-5 shrink-0 text-[#2ED8BE]" aria-hidden="true" />
+                  <Instagram
+                    className="h-4.5 w-4.5 sm:h-5 sm:w-5 shrink-0 text-[#2ED8BE]"
+                    aria-hidden="true"
+                  />
                   <span>Instagram</span>
-                  <ArrowUpRight className="h-4 w-4 shrink-0" aria-hidden="true" />
+                  <ArrowUpRight
+                    className="h-4 w-4 shrink-0"
+                    aria-hidden="true"
+                  />
                 </a>
               </div>
             </div>
@@ -344,8 +347,8 @@ export function NexoraAboutFaqFooterSection() {
               </a>
               <p className="mt-4 text-xs sm:text-sm leading-relaxed text-[#B8C7DF]">
                 Desenvolvimento de experiências digitais desde 2022: Landing
-                Pages, Redesign de Sites, Aplicações Web sob medida e
-                E-commerce Interativo.
+                Pages, Redesign de Sites, Aplicações Web sob medida e E-commerce
+                Interativo.
               </p>
             </div>
 

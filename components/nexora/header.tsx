@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
-import { Menu, X, ArrowUpRight } from 'lucide-react';
-import { NAV_ITEMS, buildWhatsAppUrl } from '@/lib/nexora-data';
+import React, { useState, useEffect } from "react";
+import Image from "next/image";
+import { Menu, X, ArrowUpRight } from "lucide-react";
+import { NAV_ITEMS, buildWhatsAppUrl } from "@/lib/nexora-data";
 
 export function NexoraHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -14,19 +14,19 @@ export function NexoraHeader() {
       setScrolled(window.scrollY > 12);
     };
     onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   useEffect(() => {
     if (!mobileMenuOpen) return;
     const onKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
+      if (e.key === "Escape") {
         setMobileMenuOpen(false);
       }
     };
-    window.addEventListener('keydown', onKeyDown);
-    return () => window.removeEventListener('keydown', onKeyDown);
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
   }, [mobileMenuOpen]);
 
   const whatsappHref = buildWhatsAppUrl();
@@ -35,8 +35,8 @@ export function NexoraHeader() {
     <header
       className={`sticky top-0 z-50 w-full transition-colors duration-200 ${
         scrolled
-          ? 'bg-white/92 backdrop-blur-md border-b border-[#DCE6F2] shadow-[0_4px_20px_-8px_rgba(11,25,51,0.08)]'
-          : 'bg-[#F7FAFC]/85 backdrop-blur-sm border-b border-transparent'
+          ? "bg-[#0A1833] border-b border-white/15"
+          : "bg-[#0A1833] border-b border-transparent"
       }`}
     >
       <div className="mx-auto flex max-w-[1240px] items-center justify-between gap-4 px-4 py-3.5 sm:px-6 lg:px-8">
@@ -47,7 +47,7 @@ export function NexoraHeader() {
           className="inline-flex items-center shrink-0 rounded-lg py-0.5"
         >
           <Image
-            src="/assets/nexora/nexora-logo.png"
+            src="/assets/nexora/nexora-logo-white.png"
             alt="Logo NEXORA"
             width={164}
             height={42}
@@ -66,7 +66,7 @@ export function NexoraHeader() {
             <a
               key={item.href}
               href={item.href}
-              className="relative py-1 text-sm font-semibold text-[#3B4E6B] hover:text-[#0B1933] transition-colors whitespace-nowrap shrink-0 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:rounded-full after:bg-[#214594] after:transition-all hover:after:w-full"
+              className="relative py-1 text-sm font-semibold text-[#F8FAFC] hover:text-[#16E07B] transition-colors whitespace-nowrap shrink-0 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:rounded-full after:bg-[#214594] after:transition-all hover:after:w-full"
             >
               {item.label}
             </a>
@@ -91,7 +91,11 @@ export function NexoraHeader() {
             onClick={() => setMobileMenuOpen((prev) => !prev)}
             aria-expanded={mobileMenuOpen}
             aria-controls="nexora-mobile-menu"
-            aria-label={mobileMenuOpen ? 'Fechar menu de navegação' : 'Abrir menu de navegação'}
+            aria-label={
+              mobileMenuOpen
+                ? "Fechar menu de navegação"
+                : "Abrir menu de navegação"
+            }
             className="inline-flex lg:hidden h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full border border-[#DCE6F2] bg-white text-[#0B1933] hover:bg-[#EEF5FB] transition-colors"
           >
             {mobileMenuOpen ? (
@@ -111,7 +115,10 @@ export function NexoraHeader() {
           aria-label="Menu mobile"
           className="lg:hidden border-b border-[#DCE6F2] bg-white px-4 pt-2 pb-5 shadow-lg"
         >
-          <nav aria-label="Navegação mobile" className="flex flex-col space-y-1">
+          <nav
+            aria-label="Navegação mobile"
+            className="flex flex-col space-y-1"
+          >
             {NAV_ITEMS.map((item) => (
               <a
                 key={item.href}
