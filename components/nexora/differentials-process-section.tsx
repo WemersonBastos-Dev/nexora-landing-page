@@ -1,4 +1,5 @@
 "use client";
+import { WhatsAppIcon } from "./whatsapp-icon";
 
 import React from "react";
 import {
@@ -225,6 +226,7 @@ export function NexoraDifferentialsAndProcessSection() {
                     rel="noopener noreferrer"
                     className="nx-btn flex w-full items-center justify-center gap-2 rounded-full bg-[#16E07B] px-5 py-3 text-sm font-medium text-[#0B1933] hover:bg-[#31FA8C]"
                   >
+                    <WhatsAppIcon />
                     <span>Iniciar contato pelo WhatsApp</span>
                     <ArrowUpRight
                       className="h-4 w-4 shrink-0"

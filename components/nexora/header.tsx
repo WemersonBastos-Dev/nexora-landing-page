@@ -1,4 +1,5 @@
 "use client";
+import { WhatsAppIcon } from "./whatsapp-icon";
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
@@ -35,8 +36,8 @@ export function NexoraHeader() {
     <header
       className={`sticky top-0 z-50 w-full transition-colors duration-200 ${
         scrolled
-          ? "bg-[#0A1833] border-b border-white/15"
-          : "bg-[#0A1833] border-b border-transparent"
+          ? "bg-[#F7FAFC] border-b border-[#DCE6F2]"
+          : "bg-[#F7FAFC] border-b border-transparent"
       }`}
     >
       <div className="mx-auto flex max-w-[1240px] items-center justify-between gap-4 px-4 py-3.5 sm:px-6 lg:px-8">
@@ -47,7 +48,7 @@ export function NexoraHeader() {
           className="inline-flex items-center shrink-0 rounded-lg py-0.5"
         >
           <Image
-            src="/assets/nexora/nexora-logo-white.png"
+            src="/assets/nexora/nexora-logo.png"
             alt="Logo NEXORA"
             width={164}
             height={42}
@@ -66,7 +67,7 @@ export function NexoraHeader() {
             <a
               key={item.href}
               href={item.href}
-              className="relative py-1 text-sm font-semibold text-[#F8FAFC] hover:text-[#16E07B] transition-colors whitespace-nowrap shrink-0 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:rounded-full after:bg-[#214594] after:transition-all hover:after:w-full"
+              className="relative py-1 text-sm font-semibold text-[#0B1933] hover:text-[#214594] transition-colors whitespace-nowrap shrink-0 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:rounded-full after:bg-[#214594] after:transition-all hover:after:w-full"
             >
               {item.label}
             </a>
@@ -82,6 +83,7 @@ export function NexoraHeader() {
             aria-label="Solicitar orçamento pelo WhatsApp (abre em nova aba)"
             className="nx-btn hidden sm:inline-flex items-center gap-2 rounded-full border-2 border-[#0B1933] bg-white px-3.5 sm:px-4 lg:px-5 py-2 lg:py-2.5 text-xs lg:text-sm font-bold text-[#0B1933] hover:bg-[#0B1933] hover:text-white whitespace-nowrap shrink-0"
           >
+            <WhatsAppIcon />
             <span>Solicitar orçamento</span>
             <ArrowUpRight className="h-4 w-4 shrink-0" aria-hidden="true" />
           </a>
@@ -138,6 +140,7 @@ export function NexoraHeader() {
               onClick={() => setMobileMenuOpen(false)}
               className="nx-btn flex w-full items-center justify-center gap-2 rounded-full bg-[#214594] px-6 py-3.5 text-sm font-bold text-white shadow-md hover:bg-[#152E69]"
             >
+              <WhatsAppIcon />
               <span>Solicitar orçamento no WhatsApp</span>
               <ArrowUpRight className="h-4 w-4 shrink-0" aria-hidden="true" />
             </a>

@@ -1,4 +1,14 @@
-import { ArrowRight, ArrowUpRight, Check, Sparkles } from "lucide-react";
+import { WhatsAppIcon } from "./whatsapp-icon";
+import {
+  ArrowRight,
+  ArrowUpRight,
+  Check,
+  Sparkles,
+  LayoutTemplate,
+  RefreshCw,
+  Code2,
+  ShoppingBag,
+} from "lucide-react";
 import {
   WEB_SOLUTIONS,
   WEB_APP_PILLARS,
@@ -29,7 +39,15 @@ export function NexoraSolutionsSection() {
           {WEB_SOLUTIONS.map((s, i) => (
             <article key={s.id} className="nx-service">
               <span className="nx-service-number" aria-hidden="true">
-                0{i + 1}
+                {i === 0 ? (
+                  <LayoutTemplate />
+                ) : i === 1 ? (
+                  <RefreshCw />
+                ) : i === 2 ? (
+                  <Code2 />
+                ) : (
+                  <ShoppingBag />
+                )}
               </span>
               <div>
                 <h3>{s.title}</h3>
@@ -53,6 +71,7 @@ export function NexoraSolutionsSection() {
                   rel="noopener noreferrer"
                   aria-label={"Solicitar orçamento para " + s.title}
                 >
+                  <WhatsAppIcon />
                   Solicitar orçamento <ArrowUpRight size={20} />
                 </a>
               </div>
@@ -92,6 +111,7 @@ export function NexoraSolutionsSection() {
               target="_blank"
               rel="noopener noreferrer"
             >
+              <WhatsAppIcon />
               Conversar sobre uma Aplicação Web <ArrowUpRight size={20} />
             </a>
             <a href="#processo" className="nx-text-link">
@@ -183,6 +203,7 @@ export function NexoraSolutionsSection() {
                       rel="noopener noreferrer"
                       className="nx-btn inline-flex items-center justify-center gap-2 rounded-full bg-[#16E07B] px-6 py-3.5 text-sm font-medium text-[#0B1933] shadow-lg hover:bg-[#31FA8C] text-center"
                     >
+                      <WhatsAppIcon />
                       <span>Solicitar orçamento</span>
                       <ArrowUpRight
                         className="h-4 w-4 shrink-0"

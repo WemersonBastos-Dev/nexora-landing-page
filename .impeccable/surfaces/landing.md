@@ -1,20 +1,24 @@
-# Landing page — editorial redesign
+# Landing page — futuristic light studio
 
 ## Approved direction
 
-Deep editorial composition informed by the supplied Nymera screenshots, retaining NEXORA's blue/green identity, Plus Jakarta Sans, factual content, team photographs and official WhatsApp/Instagram destinations. The selected Overdrive direction is **1 — Architecture in motion**.
+The user explicitly replaced the previous editorial direction with a futuristic light hero, CSS3D laptop, technical SVG objects, native-scroll parallax and simpler mobile/reduced-motion behavior. Preserve NEXORA's blue/green identity, Plus Jakarta Sans, product facts, team portraits and official channels. Every WhatsApp CTA contains a white WhatsApp brand mark.
 
 ## Purpose and sequence
 
-Convert interest in web development into a WhatsApp project conversation. The implemented sequence is sticky navigation → typographic dark hero with service links and factual proof → light numbered service grid → dark application architecture demonstration and pillars → supporting conversion panel → differentials and process → team and ideals → complementary services → FAQ → contact/footer.
+Convert interest in web development into a WhatsApp project conversation. The implemented sequence is sticky navigation → light hero with CSS laptop with service links and factual proof → light SVG-led service grid → dark application architecture demonstration and pillars → supporting conversion panel → differentials and process → team and ideals → complementary services → FAQ → contact/footer.
 
 The hero headline is “Vamos tornar a sua marca conhecida?”. Four services come from `WEB_SOLUTIONS`; details disclosures preserve their deliverables without requiring every item to remain visible. Process and FAQ preserve the commercial terms in `lib/nexora-data.ts`.
 
-## Focal interaction
+## Hero scene
+
+`laptop-scene.tsx` creates a conceptual notebook from CSS/HTML, with a 48-key deck and inline SVG technical objects. `depth-scene.tsx` supplies native-scroll offsets, visible-only requestAnimationFrame updates and mouse tilt. No Three.js, WebGL or external 3D model is used. Mobile disables dynamic depth and hides the cursor object; reduced motion gives a static device view. The page does not claim this concept is a shipped customer application.
+
+## Application interaction
 
 `components/nexora/architecture-demo.tsx` implements three selectable conceptual layers: Interface, Dados and Segurança. The default is Interface with the stack composed. “Explorar arquitetura” toggles expansion; choosing a layer also expands the stack. The selected layer appears in front with a light surface; buttons expose `aria-pressed`, inactive panels use `aria-hidden`, and the caption updates with `aria-live="polite"`.
 
-The demonstration explicitly says it is conceptual and contains no customer data. It communicates architecture rather than promising a functioning product dashboard. Reduced motion removes stack movement and hides inactive layers; narrow layouts keep supporting layers behind the selected panel. The initial content remains visible without animation, but switching layers requires JavaScript.
+The stack now sits in device frames above a laptop base, wrapped in DepthScene at half the scroll-depth offset. The demonstration explicitly says it is conceptual and contains no customer data. It communicates architecture rather than promising a functioning product dashboard. Reduced motion removes stack movement and hides inactive layers; narrow layouts keep supporting layers behind the selected panel. The initial content remains visible without animation, but switching layers requires JavaScript.
 
 ## Preservation requirements
 
@@ -22,6 +26,6 @@ Keep the official logo and supplied team portraits. Keep the founding year, four
 
 ## Current boundaries and follow-up
 
-The page retains a static secondary conversion illustration, gradient panels and multiple container conventions. RevealOnScroll and ParallaxLayer are static wrappers; architecture is the sole focal spatial animation. Buttons retain brief hover feedback. Browser validation is recorded separately from this design contract.
+This document records inspected code, not an independent browser or accessibility audit. The retained conversion illustration is static: ParallaxLayer and RevealOnScroll are passthroughs. Native depth is implemented by DepthScene for the hero and application scene. Existing institutional sections still use different container conventions and some retained gradients.
 
-The Impeccable launcher was unavailable in this environment; no panel launch or panel rendering was verified. Documentation does not imply deployment, commits, analytics instrumentation or measured conversion improvement.
+The Impeccable launcher was unavailable; no panel launch or panel rendering was verified. Component sidecar previews are static extracts and do not reproduce React-driven depth or selection. Documentation does not imply deployment, analytics instrumentation or measured conversion improvement.

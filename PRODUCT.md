@@ -21,4 +21,4 @@ The page addresses businesses seeking a first web presence, a renewed website, a
 
 Retain the NEXORA logo, official blue and green identity, Plus Jakarta Sans and Brazilian Portuguese. Communicate design, functionality, UX/UI and performance without inventing customer outcomes, testimonials, project counts or delivery guarantees. Conceptual interface demonstrations must remain explicitly labeled and must not imply real customer data or a shipped SaaS product.
 
-The user approved an editorial redesign informed by supplied Nymera screenshots while preserving NEXORA identity and facts. Page composition and the chosen architecture interaction belong in `.impeccable/surfaces/landing.md`; reusable visual guidance belongs in `DESIGN.md`.
+The user approved a futuristic light redesign with a CSS3D laptop, technical objects, native-scroll parallax and simpler mobile/reduced-motion behavior. This replaces the previous editorial direction. Keep a white WhatsApp brand icon in each WhatsApp CTA. Page composition lives in `.impeccable/surfaces/landing.md`; reusable visual guidance lives in `DESIGN.md`.

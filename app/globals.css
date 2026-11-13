@@ -679,3 +679,568 @@ a {
     visibility: hidden;
   }
 }
+
+/* Futuristic NEXORA: light studio, tangible interfaces, restrained depth. */
+.nx-editorial-hero {
+  background: #f7fafc;
+  color: #0b1933;
+  padding-top: 38px;
+  overflow: hidden;
+}
+.nx-future-hero-grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.25fr;
+  align-items: center;
+  gap: 28px;
+  min-height: 570px;
+}
+.nx-hero-label {
+  color: #214594;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  margin-bottom: 22px;
+}
+.nx-editorial-hero h1 {
+  font-size: clamp(44px, 4.8vw, 70px);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  max-width: 620px;
+}
+.nx-editorial-hero h1 span {
+  color: #214594;
+}
+.nx-hero-bottom {
+  display: block;
+  margin: 28px 0 0;
+}
+.nx-hero-bottom p {
+  color: #3b4e6b;
+  font-size: 16px;
+  line-height: 1.7;
+  max-width: 48ch;
+}
+.nx-hero-actions {
+  justify-content: flex-start;
+  margin-top: 28px;
+  gap: 20px;
+}
+.nx-specialties {
+  border-color: #dce6f2;
+  margin-top: 24px;
+}
+.nx-specialties a {
+  color: #214594;
+}
+.nx-proof {
+  background: #0a1833;
+  color: #f8fafc;
+  padding: 40px;
+  border-radius: 24px;
+  margin-top: 32px;
+  gap: 30px;
+}
+.nx-proof > div + div {
+  border-left: 1px solid #ffffff25;
+  padding-left: 30px;
+}
+.nx-proof-icon {
+  color: #2ed8be;
+  margin-bottom: 22px;
+}
+.nx-proof-icon svg {
+  width: 28px;
+  height: 28px;
+  stroke-width: 1.5;
+}
+.nx-proof strong {
+  font-size: 20px;
+}
+.nx-whatsapp-icon {
+  color: #fff;
+  fill: currentColor;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+a:has(> .nx-whatsapp-icon) {
+  background: #214594;
+  color: #fff;
+  border-color: #214594;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 44px;
+  border-radius: 100px;
+  padding: 12px 20px;
+  transition: background 0.15s;
+}
+a:has(> .nx-whatsapp-icon):hover {
+  background: #152e69;
+  color: #fff;
+}
+.nx-app-section a:has(> .nx-whatsapp-icon),
+#contato a:has(> .nx-whatsapp-icon) {
+  background: #214594;
+  border: 1px solid #7896cb;
+}
+.nx-depth-scene {
+  --depth-y: 0px;
+  --pointer-x: 0deg;
+  --pointer-y: 0deg;
+  position: relative;
+}
+.nx-laptop-scene {
+  height: 570px;
+  perspective: 1300px;
+  isolation: isolate;
+}
+.nx-orbit {
+  position: absolute;
+  inset: 55px 20px 90px 30px;
+  border-radius: 50%;
+  background: #dcebef;
+  transform: translateY(calc(var(--depth-y) * -0.4));
+  z-index: -1;
+}
+.nx-laptop {
+  position: absolute;
+  width: 84%;
+  left: 8%;
+  top: 98px;
+  transform-style: preserve-3d;
+  transform: translateY(var(--depth-y)) rotateX(var(--pointer-y))
+    rotateY(calc(-18deg + var(--pointer-x))) rotateZ(-8deg);
+}
+.nx-laptop-lid {
+  border-radius: 18px 18px 5px 5px;
+  padding: 13px 12px 18px;
+  background: linear-gradient(
+    135deg,
+    #a5b6c4,
+    #3b4e6b 2%,
+    #0b1933 5%,
+    #0b1933 96%,
+    #768b9e
+  );
+  box-shadow:
+    8px 12px 0 #667b8d,
+    16px 26px 35px #0a183329;
+  position: relative;
+}
+.nx-camera {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #91a4ba;
+  position: absolute;
+  top: 5px;
+  left: 50%;
+}
+.nx-laptop-display {
+  background: #f7fafc;
+  border-radius: 5px;
+  overflow: hidden;
+  aspect-ratio: 1.55;
+  color: #0b1933;
+}
+.nx-screen-nav {
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid #dce6f2;
+  font-size: 8px;
+}
+.nx-screen-nav strong {
+  font-size: 13px;
+  color: #214594;
+}
+.nx-screen-nav span {
+  margin-left: auto;
+}
+.nx-screen-main {
+  padding: 24px 22px 18px;
+  background: #0a1833;
+  color: #fff;
+}
+.nx-screen-main > span {
+  font-size: 8px;
+  letter-spacing: 0.1em;
+  color: #b8c7df;
+}
+.nx-screen-main h2 {
+  font-size: clamp(20px, 2.5vw, 34px);
+  font-weight: 500;
+  margin: 12px 0;
+  line-height: 1.1;
+}
+.nx-screen-main em {
+  font-style: normal;
+  color: #31fa8c;
+}
+.nx-screen-chip {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  border-radius: 20px;
+  background: #16e07b;
+  color: #0a1833;
+  font-size: 8px;
+  padding: 7px 12px;
+}
+.nx-screen-services {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+  color: #214594;
+  font-size: 9px;
+}
+.nx-screen-services > div {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.nx-laptop-deck {
+  height: 150px;
+  background: linear-gradient(110deg, #dce6f2, #91a4ba 45%, #edf5fb);
+  transform-origin: top;
+  transform: rotateX(65deg);
+  border-radius: 4px 4px 15px 15px;
+  position: relative;
+  box-shadow:
+    0 12px 0 #738a9f,
+    0 40px 40px #0a183329;
+}
+.nx-keyboard {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 3px;
+  padding: 12px 35px;
+}
+.nx-keyboard i {
+  background: #23394f;
+  border-radius: 2px;
+  height: 15px;
+  box-shadow: 0 1px 0 #f7fafc70;
+}
+.nx-trackpad {
+  width: 28%;
+  height: 37px;
+  border: 1px solid #738a9f;
+  border-radius: 5px;
+  margin: auto;
+  background: #c1cfdb;
+}
+.nx-laptop-edge {
+  height: 5px;
+  width: 25%;
+  background: #7e91a3;
+  position: absolute;
+  bottom: 68px;
+  left: 38%;
+  border-radius: 0 0 8px 8px;
+  display: none;
+}
+.nx-code-object {
+  position: absolute;
+  right: 0;
+  top: 35px;
+  width: 105px;
+  height: 110px;
+  border-radius: 20px;
+  background: linear-gradient(140deg, #3570b7, #152e69);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow:
+    7px 9px 0 #0a1833,
+    14px 24px 30px #0a183326;
+  transform: translateY(calc(var(--depth-y) * -1.2)) rotate(12deg);
+}
+.nx-code-object svg {
+  width: 48px;
+  height: 48px;
+}
+.nx-code-object span {
+  font-size: 8px;
+}
+.nx-cursor-object {
+  position: absolute;
+  bottom: 93px;
+  left: 0;
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+  background: #16e07b;
+  display: grid;
+  place-items: center;
+  color: #0a1833;
+  box-shadow:
+    5px 7px 0 #098a4b,
+    10px 18px 25px #0a18332b;
+  transform: translateY(calc(var(--depth-y) * 1.5)) rotate(-15deg);
+}
+.nx-cursor-object svg {
+  width: 40px;
+  height: 40px;
+}
+.nx-scene-caption {
+  position: absolute;
+  bottom: 12px;
+  width: 100%;
+  text-align: center;
+  font-size: 11px;
+  color: #3b4e6b;
+}
+.nx-service-number svg {
+  width: 42px;
+  height: 42px;
+  stroke-width: 1.5;
+  color: #214594;
+}
+.nx-service {
+  grid-template-columns: 52px 1fr;
+}
+.nx-service-link {
+  font-size: 13px;
+}
+.nx-app-depth {
+  max-width: 1000px;
+  margin: auto;
+  transform: translateY(calc(var(--depth-y) * 0.5));
+}
+.nx-app-depth .nx-demo-stage {
+  height: 460px;
+  padding-top: 10px;
+  margin-bottom: 0;
+}
+.nx-app-depth .nx-demo-layer {
+  border: 10px solid #25394f;
+  border-bottom-width: 22px;
+  box-shadow: 5px 8px 0 #71849b;
+}
+.nx-app-laptop-base {
+  height: 30px;
+  background: linear-gradient(100deg, #b8c7df, #f7fafc 45%, #7890a9);
+  border-radius: 4px 4px 50% 50%;
+  max-width: 880px;
+  margin: -25px auto 35px;
+  position: relative;
+  box-shadow: 0 18px 30px #0004;
+}
+.nx-app-laptop-base:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width: 20%;
+  height: 7px;
+  background: #7890a9;
+  border-radius: 0 0 10px 10px;
+}
+.nx-demo-stage.is-expanded + .nx-app-laptop-base {
+  opacity: 0.7;
+}
+@media (min-width: 1600px) {
+  .nx-laptop-scene {
+    height: 600px;
+  }
+}
+@media (max-width: 1023px) {
+  .nx-future-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .nx-future-copy {
+    max-width: 700px;
+  }
+  .nx-editorial-hero h1 {
+    max-width: 680px;
+    font-size: clamp(44px, 7vw, 68px);
+  }
+  .nx-hero-bottom p {
+    max-width: 60ch;
+  }
+  .nx-laptop-scene {
+    max-width: 650px;
+    width: 100%;
+    margin: auto;
+    height: 560px;
+  }
+  .nx-screen-main h2 {
+    font-size: 32px;
+  }
+  .nx-proof {
+    padding: 28px;
+    gap: 20px;
+  }
+  .nx-proof > div + div {
+    padding-left: 20px;
+  }
+  .nx-proof strong {
+    font-size: 17px;
+  }
+}
+@media (max-width: 767px) {
+  .nx-editorial-hero {
+    padding-top: 30px;
+  }
+  .nx-editorial-hero h1 {
+    font-size: clamp(42px, 10vw, 60px);
+  }
+  .nx-hero-label {
+    font-size: 11px;
+    margin-bottom: 16px;
+  }
+  .nx-laptop-scene {
+    height: 390px;
+    margin-top: 16px;
+  }
+  .nx-laptop {
+    width: 90%;
+    left: 5%;
+    top: 54px;
+    transform: rotateY(-10deg) rotateZ(-5deg);
+  }
+  .nx-laptop-lid {
+    padding: 10px 8px 12px;
+    border-radius: 12px 12px 4px 4px;
+  }
+  .nx-laptop-display {
+    aspect-ratio: 1.4;
+  }
+  .nx-screen-nav {
+    padding: 8px;
+    font-size: 6px;
+  }
+  .nx-screen-nav strong {
+    font-size: 10px;
+  }
+  .nx-screen-main {
+    padding: 14px;
+  }
+  .nx-screen-main h2 {
+    font-size: 25px;
+  }
+  .nx-screen-main > span {
+    font-size: 6px;
+  }
+  .nx-screen-services {
+    padding: 10px;
+    font-size: 7px;
+    gap: 4px;
+  }
+  .nx-screen-services svg {
+    width: 12px;
+  }
+  .nx-laptop-deck {
+    height: 110px;
+  }
+  .nx-keyboard {
+    padding: 10px 22px;
+    gap: 2px;
+  }
+  .nx-keyboard i {
+    height: 10px;
+  }
+  .nx-trackpad {
+    height: 22px;
+  }
+  .nx-code-object {
+    width: 62px;
+    height: 65px;
+    right: 0;
+    top: 7px;
+    border-radius: 12px;
+  }
+  .nx-code-object svg {
+    width: 28px;
+    height: 28px;
+  }
+  .nx-code-object span {
+    display: none;
+  }
+  .nx-cursor-object {
+    display: none;
+  }
+  .nx-orbit {
+    inset: 30px 0 50px;
+  }
+  .nx-scene-caption {
+    font-size: 10px;
+    bottom: 0;
+  }
+  .nx-proof {
+    grid-template-columns: 1fr 1fr;
+    padding: 26px 20px;
+    gap: 28px 20px;
+    border-radius: 18px;
+  }
+  .nx-proof > div + div {
+    border-left: 0;
+    padding-left: 0;
+  }
+  .nx-proof-icon {
+    margin-bottom: 14px;
+  }
+  .nx-proof p {
+    font-size: 12px;
+  }
+  .nx-app-depth {
+    transform: none;
+  }
+  .nx-app-depth .nx-demo-stage {
+    height: 430px;
+  }
+  .nx-app-depth .nx-demo-layer {
+    border-width: 6px;
+    border-bottom-width: 16px;
+  }
+  .nx-app-laptop-base {
+    margin-top: -32px;
+    height: 20px;
+  }
+  .nx-app-actions a:has(> .nx-whatsapp-icon) {
+    font-size: 13px;
+    padding: 14px;
+  }
+  .nx-layer-content h3 {
+    font-size: 24px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nx-laptop,
+  .nx-code-object,
+  .nx-cursor-object,
+  .nx-orbit,
+  .nx-app-depth {
+    transform: none;
+    transition: none;
+  }
+  .nx-laptop {
+    transform: rotateZ(-4deg);
+  }
+}
+
+/* Keep the device and its caption inside the scene at wide viewports. */
+.nx-screen-services {
+  background: #f7fafc;
+}
+@media (min-width: 1024px) {
+  .nx-laptop-scene {
+    height: 650px;
+  }
+  .nx-laptop {
+    width: 80%;
+    left: 10%;
+    top: 96px;
+  }
+  .nx-scene-caption {
+    bottom: 6px;
+  }
+}

@@ -1,4 +1,5 @@
 "use client";
+import { WhatsAppIcon } from "./whatsapp-icon";
 
 import React, { useState } from "react";
 import Image from "next/image";
@@ -162,6 +163,7 @@ export function NexoraAboutFaqFooterSection() {
                   rel="noopener noreferrer"
                   className="nx-btn inline-flex items-center justify-center gap-2 self-start lg:self-center rounded-full border border-[#214594] bg-white px-5 py-2.5 text-xs sm:text-sm font-bold text-[#214594] hover:bg-[#214594] hover:text-white whitespace-nowrap shrink-0"
                 >
+                  <WhatsAppIcon />
                   <span>Consultar serviços complementares</span>
                   <ArrowUpRight
                     className="h-4 w-4 shrink-0"
@@ -296,10 +298,8 @@ export function NexoraAboutFaqFooterSection() {
                   aria-label={`Conversar pelo WhatsApp ${NEXORA_CONTACT.whatsappPhoneDisplay} (abre em nova aba)`}
                   className="nx-btn inline-flex items-center justify-center gap-2 sm:gap-2.5 rounded-full bg-[#16E07B] px-4 sm:px-6 py-3.5 sm:py-4 text-xs sm:text-sm lg:text-base font-medium text-[#0B1933] shadow-lg hover:bg-[#31FA8C] text-center"
                 >
-                  <MessageCircle
-                    className="h-4.5 w-4.5 sm:h-5 sm:w-5 shrink-0"
-                    aria-hidden="true"
-                  />
+                  <WhatsAppIcon />
+
                   <span>WhatsApp</span>
                   <ArrowUpRight
                     className="h-4 w-4 shrink-0"
@@ -381,7 +381,8 @@ export function NexoraAboutFaqFooterSection() {
                   aria-label="WhatsApp comercial da NEXORA (abre em nova aba)"
                   className="nx-btn inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs font-bold text-white hover:border-[#31FA8C] hover:text-[#31FA8C]"
                 >
-                  <MessageCircle className="h-4 w-4" aria-hidden="true" />
+                  <WhatsAppIcon />
+
                   <span>WhatsApp Comercial</span>
                   <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
                 </a>

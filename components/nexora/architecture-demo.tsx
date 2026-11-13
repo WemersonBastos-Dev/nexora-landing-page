@@ -1,4 +1,6 @@
 "use client";
+import { DepthScene } from "./depth-scene";
+
 import { useState } from "react";
 import {
   Layers,
@@ -46,38 +48,43 @@ export function ArchitectureDemo() {
           {expanded ? "Recompor aplicação" : "Explorar arquitetura"}
         </button>
       </div>
-      <div className={"nx-demo-stage " + (expanded ? "is-expanded" : "")}>
-        {layers.map((layer, i) => {
-          const Icon = layer.icon;
-          return (
-            <div
-              key={layer.name}
-              className={
-                "nx-demo-layer layer-" + i + (active === i ? " is-active" : "")
-              }
-              aria-hidden={active !== i}
-            >
-              <div className="nx-layer-title">
-                <Icon size={22} />
-                <span>{layer.name}</span>
-                <span>NEXORA / {String(i + 1).padStart(2, "0")}</span>
-              </div>
-              <div className="nx-layer-content">
-                <h3>{layer.title}</h3>
-                <p>{layer.description}</p>
-                <div className="nx-demo-modules">
-                  {layer.items.map((item) => (
-                    <div key={item}>
-                      <span>{item}</span>
-                      <ArrowUpRight size={18} />
-                    </div>
-                  ))}
+      <DepthScene className="nx-app-depth">
+        <div className={"nx-demo-stage " + (expanded ? "is-expanded" : "")}>
+          {layers.map((layer, i) => {
+            const Icon = layer.icon;
+            return (
+              <div
+                key={layer.name}
+                className={
+                  "nx-demo-layer layer-" +
+                  i +
+                  (active === i ? " is-active" : "")
+                }
+                aria-hidden={active !== i}
+              >
+                <div className="nx-layer-title">
+                  <Icon size={22} />
+                  <span>{layer.name}</span>
+                  <span>NEXORA / {String(i + 1).padStart(2, "0")}</span>
+                </div>
+                <div className="nx-layer-content">
+                  <h3>{layer.title}</h3>
+                  <p>{layer.description}</p>
+                  <div className="nx-demo-modules">
+                    {layer.items.map((item) => (
+                      <div key={item}>
+                        <span>{item}</span>
+                        <ArrowUpRight size={18} />
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
-          );
-        })}
-      </div>
+            );
+          })}
+        </div>
+        <div className="nx-app-laptop-base" aria-hidden="true" />
+      </DepthScene>
       <div
         className="nx-demo-controls"
         role="group"
